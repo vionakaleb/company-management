@@ -2,6 +2,6 @@
 
 ## react + typescript + tailwind css + eslint | prettier
 
-## yarn install
+### yarn install
 
-## yarn start
+### yarn start
