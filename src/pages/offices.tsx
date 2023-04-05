@@ -1,10 +1,10 @@
-import { FormCompany, CompanyList } from 'components';
+import { CompanyDetail, OfficeList } from 'components';
 
 export default function Offices() {
     return (
         <div className="p-5">
-            <FormCompany />
-            <CompanyList />
+            <CompanyDetail />
+            <OfficeList />
         </div>
     );
 }

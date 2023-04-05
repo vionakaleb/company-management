@@ -18,7 +18,7 @@ const initialState: FormState = {
 };
 
 const formReducer = createSlice({
-    name: 'form', // * Đây là prefix cho action type
+    name: 'form',
     initialState,
     reducers: {
         addCompany: (state, action: PayloadAction<Company>) => {

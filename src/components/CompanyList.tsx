@@ -1,7 +1,6 @@
 import CompanyItem from './CompanyItem';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'redux/store';
-import { useDispatch } from 'react-redux';
 import { deleteCompany, startEditCompany } from 'redux/form.reducer';
 
 export default function CompanyList() {

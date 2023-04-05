@@ -1,7 +1,7 @@
 {
     "name": "company-management-react-ts",
     "version": "0.1.0",
-    "homepage" : "https://vionakaleb.github.io/company-management-react-ts",
+    "homepage": "https://vionakaleb.github.io/company-management-react-ts",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.3",
@@ -17,6 +17,7 @@
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.43.2",
         "react-redux": "^8.0.5",
+        "react-router-dom": "^6.10.0",
         "react-scripts": "5.0.1",
         "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"

@@ -16,6 +16,8 @@ const initialPost = {
 };
 
 export default function FormOffice() {
+    const companyList = useSelector((state: RootState) => state.form.companyList);
+
     const editOffice = useSelector((state: RootState) => state.form.editOffice);
     const { register, handleSubmit, setValue } = useForm<Office>({
         defaultValues: initialPost,
@@ -122,7 +124,9 @@ export default function FormOffice() {
                         <option value="" disabled>
                             Select Company
                         </option>
-                        <option value="companyId">Google</option>
+                        {companyList.map((company) => (
+                            <option value={company.id}>{company.name}</option>
+                        ))}
                     </select>
                 </div>
                 {/* <div className="mb-6 flex items-center">
