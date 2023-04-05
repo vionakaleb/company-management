@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://vionakaleb.github.io/company-management-react-ts/static/css/main.d9fc3d7b.css",
-    "main.js": "https://vionakaleb.github.io/company-management-react-ts/static/js/main.2d70e9c3.js",
+    "main.css": "https://vionakaleb.github.io/company-management-react-ts/static/css/main.db2f4768.css",
+    "main.js": "https://vionakaleb.github.io/company-management-react-ts/static/js/main.e82e28c8.js",
     "static/js/787.43113d7a.chunk.js": "https://vionakaleb.github.io/company-management-react-ts/static/js/787.43113d7a.chunk.js",
     "index.html": "https://vionakaleb.github.io/company-management-react-ts/index.html",
-    "main.d9fc3d7b.css.map": "https://vionakaleb.github.io/company-management-react-ts/static/css/main.d9fc3d7b.css.map",
-    "main.2d70e9c3.js.map": "https://vionakaleb.github.io/company-management-react-ts/static/js/main.2d70e9c3.js.map",
+    "main.db2f4768.css.map": "https://vionakaleb.github.io/company-management-react-ts/static/css/main.db2f4768.css.map",
+    "main.e82e28c8.js.map": "https://vionakaleb.github.io/company-management-react-ts/static/js/main.e82e28c8.js.map",
     "787.43113d7a.chunk.js.map": "https://vionakaleb.github.io/company-management-react-ts/static/js/787.43113d7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9fc3d7b.css",
-    "static/js/main.2d70e9c3.js"
+    "static/css/main.db2f4768.css",
+    "static/js/main.e82e28c8.js"
   ]
 }
