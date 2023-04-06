@@ -12,6 +12,11 @@ root.render(
         <Provider store={store}>
             <App />
         </Provider>
+        <div className="text-center mb-4">
+            <a target="_blank" href="https://vionakaleb.github.io/me" rel="noreferrer">
+                &nbsp;&#169; https://vionakaleb.github.io/me
+            </a>
+        </div>
     </React.StrictMode>,
 );
 
