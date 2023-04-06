@@ -30,7 +30,7 @@ export default function CompanyList() {
                 </div>
                 {data ? (
                     <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">
-                        {data.map((dt: any) => (
+                        {companyList.map((dt: any) => (
                             <CompanyItem
                                 key={dt.id}
                                 data={dt}

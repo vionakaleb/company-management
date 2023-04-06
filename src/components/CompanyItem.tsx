@@ -12,7 +12,10 @@ export default function CompanyItem({ data, handleDeletePost, handleStartEdit }:
         <div className="flex flex-col items-start overflow-hidden rounded-lg border md:flex-row">
             <div className="w-full flex flex-col gap-2 p-4 lg:p-6">
                 <div className="flex border-b-2 pb-1 w-full">
-                    <Link to={`/offices/${data.id}`} className="w-full text-xl font-bold text-gray-800">
+                    <Link
+                        to={`/company-management/offices/${data.id}`}
+                        className="w-full text-xl font-bold text-gray-800"
+                    >
                         {data.name}
                     </Link>
                     <div className="w-auto">
@@ -34,7 +37,7 @@ export default function CompanyItem({ data, handleDeletePost, handleStartEdit }:
                         </div>
                     </div>
                 </div>
-                <Link to={`/offices/${data.id}`}>
+                <Link to={`/company-management/offices/${data.id}`}>
                     <p className="text-black font-semibold">Address:</p>
                     <p className="text-gray-500">{data.address}</p>
                     <p className="text-black font-semibold">Revenue:</p>

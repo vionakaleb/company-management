@@ -37,7 +37,7 @@ export default function CompanyDetail() {
                             onClick={(e) => {
                                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                                 e.preventDefault;
-                                window.location.href = '/';
+                                window.location.href = '/company-management';
                             }}
                         >
                             Back to Overview
@@ -54,7 +54,7 @@ export default function CompanyDetail() {
                             onClick={(e) => {
                                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                                 e.preventDefault;
-                                window.location.href = '/';
+                                window.location.href = '/company-management';
                             }}
                         >
                             Back to Overview
