@@ -52,7 +52,7 @@ export const initialOfficeList: Office[] = [
             longitude: '2232312312',
         },
         officeStartDate: '04/04/2023',
-        companyId: '1',
+        companyId: '3',
     },
     {
         id: '2',
@@ -62,7 +62,7 @@ export const initialOfficeList: Office[] = [
             longitude: '1223232132',
         },
         officeStartDate: '06/04/2023',
-        companyId: '1',
+        companyId: '3',
     },
     {
         id: '3',
@@ -92,7 +92,7 @@ export const initialOfficeList: Office[] = [
             longitude: '3555432432',
         },
         officeStartDate: '06/04/2023',
-        companyId: '3',
+        companyId: '1',
     },
     {
         id: '6',
@@ -102,7 +102,7 @@ export const initialOfficeList: Office[] = [
             longitude: '3666423432',
         },
         officeStartDate: '06/04/2023',
-        companyId: '3',
+        companyId: '1',
     },
     {
         id: '7',
