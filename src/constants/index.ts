@@ -5,7 +5,7 @@ export const initialCompanyList: Company[] = [
         id: '1',
         name: 'Google',
         address: '1600 Amphitheatre Parkway in Mountain View, California',
-        revenue: 279800000,
+        revenue: 279800000000,
         phone: {
             code: 1,
             number: 1176554534,
@@ -15,7 +15,7 @@ export const initialCompanyList: Company[] = [
         id: '2',
         name: 'Amazon',
         address: '410 Terry Ave N, Seattle 98109, Washington',
-        revenue: 514000000,
+        revenue: 514000000000,
         phone: {
             code: 12,
             number: 1265464343,
