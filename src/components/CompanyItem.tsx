@@ -9,7 +9,7 @@ interface CompanyItemProps {
 
 export default function CompanyItem({ data, handleDeleteCompany, handleStartEdit }: CompanyItemProps) {
     return (
-        <div className="flex flex-col items-start overflow-hidden rounded-lg border md:flex-row">
+        <div className="flex flex-col items-start overflow-hidden rounded-lg border md:flex-row hover:bg-slate-100">
             <div className="w-full flex flex-col gap-2 p-4 lg:p-6">
                 <div className="flex border-b-2 pb-1 w-full">
                     <Link
