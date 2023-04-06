@@ -1,6 +1,6 @@
 # Company Management
 
-Live Project
+### Live Demo
 https://vionakaleb.github.io/company-management
 
 A simple Company Management using React Typescript and Redux.
