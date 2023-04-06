@@ -14,7 +14,7 @@ export default function CompanyList() {
         if (!data) setData(companyList);
     }, [companyList, data]);
 
-    const handleDeletePost = (id: string) => {
+    const handleDeleteCompany = (id: string) => {
         dispatch(deleteCompany(id));
     };
 
@@ -34,7 +34,7 @@ export default function CompanyList() {
                             <CompanyItem
                                 key={dt.id}
                                 data={dt}
-                                handleDeletePost={handleDeletePost}
+                                handleDeleteCompany={handleDeleteCompany}
                                 handleStartEdit={handleStartEdit}
                             />
                         ))}

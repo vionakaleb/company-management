@@ -5,7 +5,7 @@ export const initialCompanyList: Company[] = [
         id: '1',
         name: 'Google',
         address: '1600 Amphitheatre Parkway in Mountain View, California',
-        revenue: 99999,
+        revenue: 279800000,
         phone: {
             code: 1,
             number: 1176554534,
@@ -15,7 +15,7 @@ export const initialCompanyList: Company[] = [
         id: '2',
         name: 'Amazon',
         address: '410 Terry Ave N, Seattle 98109, Washington',
-        revenue: 99888,
+        revenue: 514000000,
         phone: {
             code: 12,
             number: 1265464343,
@@ -25,7 +25,7 @@ export const initialCompanyList: Company[] = [
         id: '3',
         name: 'Alibaba',
         address: '969 West Wen Yi Road Yu Hang District, Hangzhou 311121 Zhejiang Province, China',
-        revenue: 99888,
+        revenue: 109000000000,
         phone: {
             code: 13,
             number: 1345435356,
@@ -35,7 +35,7 @@ export const initialCompanyList: Company[] = [
         id: '4',
         name: 'Meta',
         address: 'Meta Seattle office at Arbor Blocks 300',
-        revenue: 99888,
+        revenue: 85960000000,
         phone: {
             code: 14,
             number: 1411232312,
@@ -51,7 +51,7 @@ export const initialOfficeList: Office[] = [
             latitude: '1112321312',
             longitude: '2232312312',
         },
-        officeStartDate: '04/04/2023',
+        officeStartDate: '28/06/2023',
         companyId: '3',
     },
     {
@@ -61,7 +61,7 @@ export const initialOfficeList: Office[] = [
             latitude: '21121312321',
             longitude: '1223232132',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '29/06/2023',
         companyId: '3',
     },
     {
@@ -71,7 +71,7 @@ export const initialOfficeList: Office[] = [
             latitude: '3222312321',
             longitude: '2333132131',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '01/05/2023',
         companyId: '2',
     },
     {
@@ -81,7 +81,7 @@ export const initialOfficeList: Office[] = [
             latitude: '4222312312',
             longitude: '2444423123',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '02/05/2023',
         companyId: '2',
     },
     {
@@ -91,7 +91,7 @@ export const initialOfficeList: Office[] = [
             latitude: '5333432434',
             longitude: '3555432432',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '04/04/2023',
         companyId: '1',
     },
     {
@@ -101,7 +101,7 @@ export const initialOfficeList: Office[] = [
             latitude: '6333432432',
             longitude: '3666423432',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '05/04/2023',
         companyId: '1',
     },
     {
@@ -111,7 +111,7 @@ export const initialOfficeList: Office[] = [
             latitude: '7444312321',
             longitude: '4777332132',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '04/01/2023',
         companyId: '4',
     },
     {
@@ -121,7 +121,7 @@ export const initialOfficeList: Office[] = [
             latitude: '8444434324',
             longitude: '4888342545',
         },
-        officeStartDate: '06/04/2023',
+        officeStartDate: '05/01/2023',
         companyId: '4',
     },
 ];

@@ -5,7 +5,7 @@ import { addOffice, cancelEditOffice, editingOffice } from 'redux/form.reducer';
 import { RootState } from 'redux/store';
 import { useEffect } from 'react';
 
-const initialPost = {
+const initialOffice = {
     name: '',
     location: {
         latitude: '',
@@ -20,7 +20,7 @@ export default function FormOffice() {
 
     const editOffice = useSelector((state: RootState) => state.form.editOffice);
     const { register, handleSubmit, setValue } = useForm<Office>({
-        defaultValues: initialPost,
+        defaultValues: initialOffice,
     });
     const dispatch = useDispatch();
 
@@ -35,7 +35,7 @@ export default function FormOffice() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editOffice]);
 
-    const handleSubmitPost = (payload: Office) => {
+    const handleSubmitOffice = (payload: Office) => {
         if (editOffice) {
             dispatch(editingOffice({ ...payload, id: editOffice.id }));
             dispatch(cancelEditOffice());
@@ -57,7 +57,7 @@ export default function FormOffice() {
     return (
         <div className="w-full p-5 border-l-[1px] border-b-2">
             <h1 className="text-xl mb-3">Create Office</h1>
-            <form onSubmit={handleSubmit(handleSubmitPost)}>
+            <form onSubmit={handleSubmit(handleSubmitOffice)}>
                 <div className="mb-6">
                     <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">
                         Name

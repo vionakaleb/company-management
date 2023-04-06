@@ -16,7 +16,7 @@ export default function OfficeList() {
         if (!data) setData(officeList);
     }, [officeList, data]);
 
-    const handleDeletePost = (id: string) => {
+    const handleDeleteOffice = (id: string) => {
         dispatch(deleteOffice(id));
     };
 
@@ -31,7 +31,7 @@ export default function OfficeList() {
                         {officeList
                             .filter((office) => office.companyId === id)
                             .map((data) => (
-                                <OfficeItem key={data.id} data={data} handleDeletePost={handleDeletePost} />
+                                <OfficeItem key={data.id} data={data} handleDeleteOffice={handleDeleteOffice} />
                             ))}
                     </div>
                 ) : (

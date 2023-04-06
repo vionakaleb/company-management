@@ -5,7 +5,7 @@ import { addCompany, cancelEditCompany, editingCompany } from 'redux/form.reduce
 import { RootState } from 'redux/store';
 import { useEffect } from 'react';
 
-const initialPost = {
+const initialCompany = {
     name: '',
     address: '',
     revenue: 0,
@@ -18,7 +18,7 @@ const initialPost = {
 export default function FormCompany() {
     const editCompany = useSelector((state: RootState) => state.form.editCompany);
     const { register, handleSubmit, setValue } = useForm<Company>({
-        defaultValues: initialPost,
+        defaultValues: initialCompany,
     });
     const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ export default function FormCompany() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editCompany]);
 
-    const handleSubmitPost = (payload: Company) => {
+    const handleSubmitCompany = (payload: Company) => {
         if (editCompany) {
             dispatch(editingCompany({ ...payload, id: editCompany.id }));
             dispatch(cancelEditCompany());
@@ -51,7 +51,7 @@ export default function FormCompany() {
     return (
         <div className="w-full p-5 border-r-[1px] border-b-2">
             <h1 className="text-xl mb-3">Create Company</h1>
-            <form onSubmit={handleSubmit(handleSubmitPost)}>
+            <form onSubmit={handleSubmit(handleSubmitCompany)}>
                 <div className="mb-6">
                     <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">
                         Name
