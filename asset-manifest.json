@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://vionakaleb.github.io/company-management/static/css/main.2b173c69.css",
-    "main.js": "https://vionakaleb.github.io/company-management/static/js/main.d5a4b919.js",
+    "main.css": "https://vionakaleb.github.io/company-management/static/css/main.8ac32416.css",
+    "main.js": "https://vionakaleb.github.io/company-management/static/js/main.c70ec3ce.js",
     "static/js/787.fc906551.chunk.js": "https://vionakaleb.github.io/company-management/static/js/787.fc906551.chunk.js",
     "index.html": "https://vionakaleb.github.io/company-management/index.html",
-    "main.2b173c69.css.map": "https://vionakaleb.github.io/company-management/static/css/main.2b173c69.css.map",
-    "main.d5a4b919.js.map": "https://vionakaleb.github.io/company-management/static/js/main.d5a4b919.js.map",
+    "main.8ac32416.css.map": "https://vionakaleb.github.io/company-management/static/css/main.8ac32416.css.map",
+    "main.c70ec3ce.js.map": "https://vionakaleb.github.io/company-management/static/js/main.c70ec3ce.js.map",
     "787.fc906551.chunk.js.map": "https://vionakaleb.github.io/company-management/static/js/787.fc906551.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b173c69.css",
-    "static/js/main.d5a4b919.js"
+    "static/css/main.8ac32416.css",
+    "static/js/main.c70ec3ce.js"
   ]
 }
