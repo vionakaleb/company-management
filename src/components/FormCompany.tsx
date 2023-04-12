@@ -10,8 +10,8 @@ const initialCompany = {
     address: '',
     revenue: 0,
     phone: {
-        code: 0,
-        number: 0,
+        code: null,
+        number: null,
     },
 };
 
@@ -105,15 +105,15 @@ export default function FormCompany() {
                         <input
                             type="number"
                             id="phone.code"
-                            className="block w-auto mx-1 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
-                            placeholder="Code"
+                            className="block w-full md:w-auto mx-1 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+                            placeholder="+ Code"
                             required
                             {...register('phone.code', { required: true })}
                         />
                         <input
                             type="number"
                             id="phone.number"
-                            className="block w-full mx-1 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+                            className="block w-full md:w-full mx-1 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
                             placeholder="Number"
                             required
                             {...register('phone.number', { required: true })}

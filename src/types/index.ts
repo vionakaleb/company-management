@@ -4,8 +4,8 @@ export interface Company {
     address: string;
     revenue: number;
     phone: {
-        code: number;
-        number: number;
+        code: any;
+        number: any;
     };
 }
 
