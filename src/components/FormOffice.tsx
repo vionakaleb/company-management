@@ -162,13 +162,13 @@ export default function FormOffice() {
                             </button>
                             <button
                                 type="reset"
-                                className="w-[30%] group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br p-0.5 text-sm font-medium text-gray-900 focus:outline-none focus:ring-4 from-gray-600 to-gray-800 group-hover:from-gray-600 group-hover:to-gray-800 dark:text-white dark:hover:text-gray-900"
+                                className="w-full md:w-[40%] group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br p-0.5 text-sm font-medium text-gray-900 focus:outline-none focus:ring-4 from-gray-600 to-gray-800 group-hover:from-gray-600 group-hover:to-gray-800 dark:text-gray dark:hover:text-gray-900"
                                 onClick={() => {
                                     dispatch(cancelEditOffice());
                                     clearForm();
                                 }}
                             >
-                                <span className="w-full relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-400">
+                                <span className="w-full relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-500">
                                     Cancel
                                 </span>
                             </button>
