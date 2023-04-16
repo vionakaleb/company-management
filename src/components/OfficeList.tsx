@@ -1,23 +1,25 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import OfficeItem from './OfficeItem';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from 'redux/store';
-import { deleteOffice } from 'redux/form.reducer';
-import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setOfficeId } from 'redux/form.reducer';
+import { useDeleteOfficeMutation, useGetAllOfficeQuery } from 'api/office';
 
 export default function OfficeList() {
     const { id } = useParams();
-    const officeList = useSelector((state: RootState) => state.form.officeList);
+
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const [data, setData] = useState<any>(null);
+    const { data: officeList, isFetching } = useGetAllOfficeQuery(id);
+    const [deleteOffice] = useDeleteOfficeMutation();
 
-    useEffect(() => {
-        if (!data) setData(officeList);
-    }, [officeList, data]);
+    const handleDeleteOffice = (id: number) => {
+        deleteOffice(id);
+    };
 
-    const handleDeleteOffice = (id: string) => {
-        dispatch(deleteOffice(id));
+    const handleStartEdit = (id: number) => {
+        navigate('/company-management');
+        dispatch(setOfficeId(id));
     };
 
     return (
@@ -26,17 +28,24 @@ export default function OfficeList() {
                 <div className="mb-10 md:mb-16">
                     <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Offices</h2>
                 </div>
-                {data ? (
+                {isFetching ? (
+                    <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
+                        <p>Loading...</p>
+                    </div>
+                ) : officeList ? (
                     <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">
-                        {officeList
-                            .filter((office) => office.companyId === id)
-                            .map((data) => (
-                                <OfficeItem key={data.id} data={data} handleDeleteOffice={handleDeleteOffice} />
-                            ))}
+                        {officeList.map((data: any) => (
+                            <OfficeItem
+                                key={data.id}
+                                data={data}
+                                handleDeleteOffice={handleDeleteOffice}
+                                handleStartEdit={handleStartEdit}
+                            />
+                        ))}
                     </div>
                 ) : (
                     <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
-                        <p>No data</p>
+                        <p>No data.</p>
                     </div>
                 )}
             </div>

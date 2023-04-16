@@ -3,8 +3,8 @@ import { Company } from 'types';
 
 interface CompanyItemProps {
     data: Company;
-    handleDeleteCompany: (id: string) => void;
-    handleStartEdit: (id: string) => void;
+    handleDeleteCompany: (id: number) => void;
+    handleStartEdit: (id: number) => void;
 }
 
 export default function CompanyItem({ data, handleDeleteCompany, handleStartEdit }: CompanyItemProps) {
@@ -44,7 +44,7 @@ export default function CompanyItem({ data, handleDeleteCompany, handleStartEdit
                     <p className="text-gray-500">{data.revenue}</p>
                     <p className="text-black font-semibold">Phone No:</p>
                     <p className="text-gray-500">
-                        ({data.phone.code}) {data.phone.number}
+                        ({data.phone_code}) {data.phone_number}
                     </p>
                 </Link>
             </div>

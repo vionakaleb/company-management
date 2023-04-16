@@ -1,21 +1,17 @@
 export interface Company {
-    id: string;
+    id: number;
     name: string;
     address: string;
-    revenue: number;
-    phone: {
-        code: any;
-        number: any;
-    };
+    revenue: string;
+    phone_code: string;
+    phone_number: string;
 }
 
 export interface Office {
-    id: string;
+    id: number;
     name: string;
-    location: {
-        latitude: string;
-        longitude: string;
-    };
-    officeStartDate: string;
-    companyId: string;
+    location_latitude: string;
+    location_longitude: string;
+    office_start_date: string;
+    company_id: string;
 }

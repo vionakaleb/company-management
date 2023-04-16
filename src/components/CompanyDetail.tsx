@@ -1,34 +1,29 @@
-import { useState, useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState } from 'redux/store';
+import { useGetDetailCompanyQuery } from 'api/company';
 
 export default function CompanyDetail() {
     const { id } = useParams();
-    const companyList = useSelector((state: RootState) => state.form.companyList);
 
-    const [data, setData] = useState<any>(null);
-
-    useEffect(() => {
-        const dt: any = companyList.find((dt) => dt.id === id);
-        if (!data) setData(dt);
-    }, [companyList, data, id]);
+    const { data: companyDetail, isFetching } = useGetDetailCompanyQuery(id ? +id : 0, { skip: id ? false : true });
 
     return (
         <div className="flex flex-col items-center overflow-hidden rounded-lg border md:flex-row">
-            {data ? (
+            {isFetching ? (
+                <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
+                    <p>Loading...</p>
+                </div>
+            ) : companyDetail ? (
                 <div className="w-full flex flex-col gap-2 p-4 lg:p-6">
                     <div className="flex border-b-2 pb-1 w-full">
-                        <h2 className="w-full text-xl font-bold text-gray-800">{data?.name}</h2>
+                        <h2 className="w-full text-xl font-bold text-gray-800">{companyDetail?.name}</h2>
                     </div>
                     <p className="text-black font-semibold">Address:</p>
-                    <p className="text-gray-500">{data?.address}</p>
+                    <p className="text-gray-500">{companyDetail?.address}</p>
                     <p className="text-black font-semibold">Revenue:</p>
-                    <p className="text-gray-500">{data?.revenue}</p>
+                    <p className="text-gray-500">{companyDetail?.revenue}</p>
                     <p className="text-black font-semibold">Phone No:</p>
                     <p className="text-gray-500">
-                        ({data?.phone?.code}) {data?.phone?.number}
+                        ({companyDetail?.phone_code}) {companyDetail?.phone_number}
                     </p>
                     <div className="flex justify-end">
                         <button
@@ -46,7 +41,7 @@ export default function CompanyDetail() {
                 </div>
             ) : (
                 <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
-                    <p>No data</p>
+                    <p>No data.</p>
                     <div className="flex justify-end">
                         <button
                             type="button"

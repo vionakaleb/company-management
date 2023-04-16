@@ -1,19 +1,22 @@
 import { Company, Office } from '../types';
 import { createSlice } from '@reduxjs/toolkit';
-import { initialCompanyList, initialOfficeList } from '../constants';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface FormState {
+    companyId: number;
     companyList: Company[];
     editCompany: Company | null;
+    officeId: number;
     officeList: Office[];
     editOffice: Office | null;
 }
 
 const initialState: FormState = {
-    companyList: initialCompanyList,
+    companyId: 0,
+    companyList: [],
     editCompany: null,
-    officeList: initialOfficeList,
+    officeId: 0,
+    officeList: [],
     editOffice: null,
 };
 
@@ -21,28 +24,34 @@ const formReducer = createSlice({
     name: 'form',
     initialState,
     reducers: {
+        setCompanyId: (state, action: PayloadAction<number>) => {
+            state.companyId = action.payload;
+        },
+        setOfficeId: (state, action: PayloadAction<number>) => {
+            state.officeId = action.payload;
+        },
         addCompany: (state, action: PayloadAction<Company>) => {
             state.companyList.push(action.payload);
         },
         addOffice: (state, action: PayloadAction<Office>) => {
             state.officeList.push(action.payload);
         },
-        deleteCompany: (state, action: PayloadAction<string>) => {
+        deleteCompany: (state, action: PayloadAction<number>) => {
             const companyId = action.payload;
-            state.companyList = state.companyList.filter((company) => company.id !== companyId);
+            state.companyList = state.companyList.filter((company) => company.id !== +companyId);
         },
-        deleteOffice: (state, action: PayloadAction<string>) => {
+        deleteOffice: (state, action: PayloadAction<number>) => {
             const officeId = action.payload;
-            state.officeList = state.officeList.filter((office) => office.id !== officeId);
+            state.officeList = state.officeList.filter((office) => office.id !== +officeId);
         },
-        startEditCompany: (state, { payload: companyId }: PayloadAction<string>) => {
-            const foundedCompany = state.companyList.find((company) => company.id === companyId);
+        startEditCompany: (state, { payload: companyId }: PayloadAction<number>) => {
+            const foundedCompany = state.companyList.find((company) => company.id === +companyId);
             if (foundedCompany) {
                 state.editCompany = foundedCompany;
             }
         },
-        startEditOffice: (state, { payload: officeId }: PayloadAction<string>) => {
-            const foundedOffice = state.officeList.find((office) => office.id === officeId);
+        startEditOffice: (state, { payload: officeId }: PayloadAction<number>) => {
+            const foundedOffice = state.officeList.find((office) => office.id === +officeId);
             if (foundedOffice) {
                 state.editOffice = foundedOffice;
             }
@@ -87,5 +96,7 @@ export const {
     editingOffice,
     startEditCompany,
     startEditOffice,
+    setCompanyId,
+    setOfficeId,
 } = formReducer.actions;
 export default formReducer.reducer;

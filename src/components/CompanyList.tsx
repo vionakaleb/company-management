@@ -1,25 +1,23 @@
-import { useState, useEffect } from 'react';
 import CompanyItem from './CompanyItem';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from 'redux/store';
-import { deleteCompany, startEditCompany } from 'redux/form.reducer';
+import { useDispatch } from 'react-redux';
+import { setCompanyId } from 'redux/form.reducer';
+import { useDeleteCompanyMutation, useGetAllCompanyQuery } from 'api/company';
 
 export default function CompanyList() {
-    const companyList = useSelector((state: RootState) => state.form.companyList);
     const dispatch = useDispatch();
 
-    const [data, setData] = useState<any>(null);
+    const { data: companyList, isFetching } = useGetAllCompanyQuery({
+        search: '',
+    });
 
-    useEffect(() => {
-        if (!data) setData(companyList);
-    }, [companyList, data]);
+    const [deleteCompany] = useDeleteCompanyMutation();
 
-    const handleDeleteCompany = (id: string) => {
-        dispatch(deleteCompany(id));
+    const handleDeleteCompany = (id: number) => {
+        deleteCompany(id);
     };
 
-    const handleStartEdit = (id: string) => {
-        dispatch(startEditCompany(id));
+    const handleStartEdit = (id: number) => {
+        dispatch(setCompanyId(id));
     };
 
     return (
@@ -28,7 +26,11 @@ export default function CompanyList() {
                 <div className="mb-10 md:mb-16">
                     <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Companies</h2>
                 </div>
-                {data ? (
+                {isFetching ? (
+                    <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
+                        <p>Loading...</p>
+                    </div>
+                ) : companyList ? (
                     <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">
                         {companyList.map((dt: any) => (
                             <CompanyItem
@@ -41,7 +43,7 @@ export default function CompanyList() {
                     </div>
                 ) : (
                     <div className="w-full flex flex-col gap-2 p-4 lg:p-6 text-center">
-                        <p>No data</p>
+                        <p>No data.</p>
                     </div>
                 )}
             </div>
