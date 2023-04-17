@@ -7,6 +7,6 @@ A simple Company Management using React Typescript and Redux.
 
 ## react + typescript + tailwind css + eslint | prettier
 
-### yarn install
+#### npm install
 
-### yarn start
+#### npm run start
